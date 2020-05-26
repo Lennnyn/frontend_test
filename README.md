@@ -1,2 +1,2 @@
-npm i
-gulp start
+* npm i
+* gulp start
