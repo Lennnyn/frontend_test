@@ -1,18 +1,20 @@
 $(document).ready(function () {
-  setInterval(function () {
-    moveRight()
-  }, 6000)
   
-  var slideWidth = $('.slider ul li').width()
+  var slides = $('.slide')
+  var slideWidth = slides.width()
+  var slideCount = slides.length
+  var sliderUlWidth = slideCount * slideWidth
   $('.slider').css({
     width: slideWidth
   })
   
+  $('.slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth })
+  
   $(window).resize(function () {
     location.reload()
   })
-  
-  $('.slider ul li:last-child').prependTo('.slider ul')
+ 
+$('.slider ul li:last-child').prependTo('.slider ul')
   
   function moveLeft() {
     $('.slider ul').animate({
@@ -31,7 +33,21 @@ $(document).ready(function () {
       $('.slider ul').css('left', '')
     })
   }
-  
+
+  var interval = setInterval(function () {
+    moveRight()
+  }, 5000)
+
+  $('.slider').on('mouseover', function() {
+    clearInterval(interval)
+   })
+   
+  $('.slider').on('mouseout', function() {
+    interval = setInterval(function () {
+      moveRight()
+    }, 5000)
+  })
+
   $('.control_prev').click(function () {
     moveLeft()
   })
