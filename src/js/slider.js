@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  
-  var slides = $('.slide')
-  var slideWidth = slides.width()
-  var slideCount = slides.length
-  var sliderUlWidth = slideCount * slideWidth
+
+  const slides = $('.slide')
+  const slideWidth = slides.width()
+  const slideCount = slides.length
+  let sliderUlWidth = slideCount * slideWidth
   $('.slider').css({
     width: slideWidth
   })
@@ -14,7 +14,7 @@ $(document).ready(function () {
     location.reload()
   })
  
-$('.slider ul li:last-child').prependTo('.slider ul')
+  $('.slider ul li:last-child').prependTo('.slider ul')
   
   function moveLeft() {
     $('.slider ul').animate({
@@ -34,13 +34,13 @@ $('.slider ul li:last-child').prependTo('.slider ul')
     })
   }
 
-  var interval = setInterval(function () {
+  let interval = setInterval(function () {
     moveRight()
   }, 5000)
 
   $('.slider').on('mouseover', function() {
     clearInterval(interval)
-   })
+  })
    
   $('.slider').on('mouseout', function() {
     interval = setInterval(function () {
