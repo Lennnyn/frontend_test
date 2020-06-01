@@ -13,7 +13,7 @@
           "indent": [
             "error",
             2
-          ],
+          ], 
           "semi": [
             "error",
             "never"
@@ -21,6 +21,9 @@
           "quotes": [
             "error",
             "single"
+          ],
+          "no-trailing-spaces": [
+            2, { "skipBlankLines": true }
           ]
         }
       }
