@@ -28,8 +28,8 @@
     "gulp-babel": "^8.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.1.0",
-    "node-sass": "^4.14.1",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^9.0.0",
     "webpack": "^4.43.0",
     "webpack-stream": "^5.2.1"
   },
